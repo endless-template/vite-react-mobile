@@ -6,13 +6,17 @@
   --adm-color-primary: hsla(148.04deg, 42.97%, 51.18%, 1);
   --adm-color-text: rgba(0, 0, 0, 0.85);
   --adm-font-size-main: 14px;
-  --theme-background: #f8f8f8;
+  /* 自定义主题 */
+  --theme-background: #f8f8f8; /* 背景颜色 */
+  --theme-color: 0, 0%, 0%; /* 文字颜色 */
 }
 html[data-prefers-color-scheme='dark'] {
   /* --adm-color-background: #262629; */
   --adm-color-primary: hsla(148.04deg, 42.97%, 51.18%, 1);
   --adm-color-text: rgba(255, 255, 255, 0.85);
+  /* 匹配暗色主题 */
   --theme-background: #141414;
+  --theme-color: 0, 0%, 100%;
 }
 *,
 *::before,
@@ -22,6 +26,7 @@ html[data-prefers-color-scheme='dark'] {
   border-width: 0;
   border-style: solid;
   border-color: var(--adm-color-border); /* 2 */
+  -webkit-tap-highlight-color: transparent;
 }
 
 img,

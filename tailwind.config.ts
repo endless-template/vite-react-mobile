@@ -2,7 +2,7 @@ import { COLOR_PRIMARY } from './src/constant'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{tsx,ts}'],
+  content: ['./src/**/*.{tsx,ts}', 'node_modules/vaul/dist'],
   corePlugins: {
     preflight: false
   },
@@ -20,7 +20,7 @@ module.exports = {
         white: 'hsla(0,0%,100%, 1)'
       },
       textColor: {
-        color: 'rgba(var(--text-color),0.85)' // 默认文字颜色 text-color,text-color/60
+        color: 'hsla(var(--theme-color),0.85)' // 默认文字颜色 text-color,text-color/60
       },
       backgroundColor: {
         white: 'var(--adm-color-background)'

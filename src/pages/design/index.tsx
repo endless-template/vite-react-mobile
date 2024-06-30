@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { Button, Checkbox, Dialog, List, Popup, Radio, Switch, Toast } from 'antd-mobile'
+import { Drawer } from 'vaul'
 import { NavBar } from '@/components'
 import useDark from '@/hooks/useDark'
 export default function Design() {
   const { theme, setTheme } = useDark()
-  const [popupVisible, setPopupVisible] = useState(false)
+  const [open, setOpen] = useState(false)
+
   return (
     <>
       <NavBar>Design System</NavBar>
@@ -19,6 +21,7 @@ export default function Design() {
           >
             暗黑模式
           </List.Item>
+          <List.Item onClick={() => setOpen(true)}>Drawer By vaul</List.Item>
           <List.Item
             onClick={() => {
               Dialog.alert({
@@ -38,7 +41,6 @@ export default function Design() {
           >
             Dialog confirm
           </List.Item>
-          <List.Item onClick={() => setPopupVisible(true)}>Popup弹出层</List.Item>
         </List>
         <div>
           <Button
@@ -90,18 +92,30 @@ export default function Design() {
           <Radio disabled />
         </div>
       </div>
-      <Popup
-        visible={popupVisible}
-        onMaskClick={() => {
-          setPopupVisible(false)
-        }}
-        onClose={() => {
-          setPopupVisible(false)
-        }}
-        bodyStyle={{ height: '40vh' }}
-      >
-        <div>asd</div>
-      </Popup>
+      <Drawer.Root open={open} onOpenChange={setOpen}>
+        <Drawer.Overlay className="fixed top-0 bottom-0 left-0 right-0 bg-black/40 z-10" />
+        <Drawer.Portal>
+          <Drawer.Content className="flex z-20 flex-col rounded-t-[8px] h-full mt-10 max-h-[56%] fixed bottom-0 left-0 right-0">
+            <div className="p-4 bg-white rounded-t-lg flex-1">
+              <div className="flex-shrink-0 w-12 h-1 mx-auto mb-6 rounded-full bg-gray-300" />
+              <div className="max-w-md mx-auto text-color/60">
+                <Drawer.Title className="mb-4 text-lg font-700 text-color/100">
+                  Drawer for React.
+                </Drawer.Title>
+                <p className="mb-2">
+                  This component can be used as a Dialog replacement on mobile and tablet devices.
+                </p>
+                <p className="mb-2">
+                  It comes unstyled, has gesture-driven animations, and is made by Emil Kowalski .
+                </p>
+                <p className="mb-8">
+                  It uses Radix s Dialog primitive under the hood and is inspired by this tweet.
+                </p>
+              </div>
+            </div>
+          </Drawer.Content>
+        </Drawer.Portal>
+      </Drawer.Root>
     </>
   )
 }
