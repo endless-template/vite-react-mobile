@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 function useDark() {
-  let value = localStorage.getItem('endless-color-scheme') || 'false'
+  const value = localStorage.getItem('endless-color-scheme') || 'false'
 
   const [theme, setTheme] = useState(value === 'true')
 

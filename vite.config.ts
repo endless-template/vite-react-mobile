@@ -1,10 +1,10 @@
-import { ConfigEnv, UserConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 import legacy from '@vitejs/plugin-legacy'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import react from '@vitejs/plugin-react'
+import { resolve } from 'node:path'
+import { ConfigEnv, UserConfig } from 'vite'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import Pages from 'vite-plugin-pages'
-import { resolve } from 'node:path'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 const consoleCDN = 'https://cdn.bootcdn.net/ajax/libs/vConsole/3.15.1/vconsole.min.js'
 // https://vitejs.dev/config/

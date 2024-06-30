@@ -6,18 +6,22 @@ import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
+import reactCompiler from 'eslint-plugin-react-compiler'
 
-export default eslint_ts.config(
+/** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
+export default [
+  eslint_js.configs.recommended,
+  ...eslint_ts.configs.recommended,
   {
-    ignores: ['node_modules/**', 'dist/**', '/types/**'],
+    ignores: ['node_modules/', 'dist/']
+  },
+  {
     languageOptions: {
       globals: {
         ...globals.browser,
         ...globals.node
       }
-    }
-  },
-  {
+    },
     plugins: {
       prettier: eslintPrettier
     },
@@ -25,40 +29,30 @@ export default eslint_ts.config(
       ...eslint_js.configs.recommended.rules,
       'no-unused-vars': 'off',
       'no-dupe-keys': 'off',
-      'max-lines': ['error', { max: 680, skipBlankLines: true, skipComments: true }]
+      'max-lines': ['error', { max: 600, skipBlankLines: true, skipComments: true }]
     }
   },
   {
     files: ['src/**/*.{ts,tsx}'],
-    // React config
     settings: {
       react: {
         version: 'detect'
       }
     },
-    languageOptions: {
-      parserOptions: {
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true
-        },
-        ecmaVersion: 'latest',
-        project: './tsconfig.json'
-      },
-      parser: eslint_ts.parser
-    },
     plugins: {
       react,
       'react-refresh': reactRefresh,
       'react-hooks': reactHooks,
-      '@typescript-eslint': eslint_ts.plugin
+      'react-compiler': reactCompiler
     },
     rules: {
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
+      'react-refresh/only-export-components': 'warn',
+      'react-compiler/react-compiler': 'error',
       '@typescript-eslint/no-unused-vars': 'warn',
-      'react-refresh/only-export-components': 'warn'
+      '@typescript-eslint/no-explicit-any': 'off'
       // 'react/jsx-sort-props': 'off',
       // 'react/jsx-wrap-multilines': 'off', // 在多行 JSX 元素周围加上括号
       // 'react/jsx-filename-extension': 'off', // 禁止可能包含 JSX 文件扩展名
@@ -129,9 +123,5 @@ export default eslint_ts.config(
         }
       ]
     }
-  },
-  {
-    extends: [eslint_ts.configs.disableTypeChecked],
-    files: ['**/*.js']
   }
-)
+]
