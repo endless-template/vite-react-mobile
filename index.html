@@ -17,6 +17,7 @@
         var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         var setting = localStorage.getItem('endless-color-scheme') || 'false'
         if (setting == "true" || (prefersDark && setting != 'false')) {
+          document.documentElement.className ='dark'
           document.documentElement.setAttribute(
             'data-prefers-color-scheme',
             'dark'
