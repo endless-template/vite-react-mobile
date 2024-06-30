@@ -1,5 +1,11 @@
 ## React19 + React Compiler 移动端基础脚手架
 
+ * 通过`pnpm patch` 修改`ant-mobile`部分源文件，以支持 React19，
+ * 除`Popover`组件外，其它`antd-mobile`组件均支持 React19
+
+## Tailwindcss + rem 适配移动端布局
+ 基于375宽度设计稿而配置：全局转换pxToRem，为完全兼容`Tailwindcss`单位，默认根fontSize为16px；至此基于tailwind生态插件均能正常适配，例如：vaul（一款流畅动画的Drawer插件）。
+ 
 ## 文件式路由系统 [vite-plugin-pages](https://www.npmjs.com/package/vite-plugin-pages)
 ```
 // pages 文件路由说明 remix 路由风格（支持路由组，无布局路径等）
@@ -9,15 +15,11 @@
 |   |-- $.tsx         // 404页
 ```
 
-### 使用前需全局执行以下命令
-* `npm install -g commitizen` 解决部分 windows 电脑提交代码时校验不生效（macOS 系统可跳过）
-* `git config --global core.autocrlf false` 解决部分 windows 电脑下换行符问题（macOS 系统可跳过）
-
-### 构建命令
+### 构建命令 仅支持pnpm
 ```
-yarn dev // 开发环境启动项目
-yarn build:staging // 测试环境build命令
-yarn build // 生产环境build命令
+pnpm dev // 开发环境启动项目
+pnpm build:staging // 测试环境build命令, 同步开启vconsole
+pnpm build // 生产环境build命令
 ```
 ## commit规范
 
