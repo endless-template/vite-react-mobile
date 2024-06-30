@@ -1,0 +1,11 @@
+diff --git a/es/utils/render.js b/es/utils/render.js
+index a47822309ca59f22fa39155c0c51951d128b0e44..e1fc91d8a77e933e4611469f71298cbffeaf06d9 100644
+--- a/es/utils/render.js
++++ b/es/utils/render.js
+@@ -1,5 +1,5 @@
+ import { __awaiter } from "tslib";
+-import * as ReactDOM from 'react-dom';
++import * as ReactDOM from 'react-dom/client';
+ // Let compiler not to search module usage
+ const fullClone = Object.assign({}, ReactDOM);
+ const {

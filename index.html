@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (768 - 375)))">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+    />
+    <title>React Compiler + antd-mobile</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <%- injectScript %>
+    <script>
+      (function () {
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        var setting = localStorage.getItem('endless-color-scheme') || 'false'
+        if (setting == "true" || (prefersDark && setting != 'false')) {
+          document.documentElement.setAttribute(
+            'data-prefers-color-scheme',
+            'dark'
+          )
+        }
+      })()
+      this.globalThis || (this.globalThis = this)
+    </script>
+    <style>
+      @media screen and (min-width: 520px) {
+        html {
+          font-size: 18.9517px !important;
+        }
+      }
+    </style>
+  </head>
+  <body ontouchstart="">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

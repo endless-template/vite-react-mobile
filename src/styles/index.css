@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --adm-color-primary: hsla(148.04deg, 42.97%, 51.18%, 1);
+  --adm-color-text: rgba(0, 0, 0, 0.85);
+  --adm-font-size-main: 14px;
+  --theme-background: #f8f8f8;
+}
+html[data-prefers-color-scheme='dark'] {
+  /* --adm-color-background: #262629; */
+  --adm-color-primary: hsla(148.04deg, 42.97%, 51.18%, 1);
+  --adm-color-text: rgba(255, 255, 255, 0.85);
+  --theme-background: #141414;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* 1 */
+  background-repeat: no-repeat; /* 2 */
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--adm-color-border); /* 2 */
+}
+
+img,
+svg {
+  max-width: 100%;
+  vertical-align: middle;
+}
+html {
+  touch-action: manipulation;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  color: var(--adm-color-text);
+  background-color: var(--theme-background);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+ul,
+ol,
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
