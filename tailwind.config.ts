@@ -2,7 +2,7 @@ import { COLOR_PRIMARY } from './src/constant'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{tsx,ts}', 'node_modules/vaul/dist'],
+  content: ['./src/**/*.{tsx,ts}'],
   corePlugins: {
     preflight: false
   },
