@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "abortcontroller-polyfill": "^1.7.5",
-    "ahooks": "^3.8.0",
     "antd-mobile": "^5.36.0",
     "antd-mobile-icons": "^0.3.0",
     "clsx": "^2.1.1",
@@ -23,7 +22,8 @@
     "react": "19.0.0-rc-e02baf6c92-20240627",
     "react-dom": "19.0.0-rc-e02baf6c92-20240627",
     "react-router-dom": "^6.23.1",
-    "vaul": "^0.9.1"
+    "vaul": "^0.9.1",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",

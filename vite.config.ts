@@ -7,10 +7,8 @@ import Pages from 'vite-plugin-pages'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 const consoleCDN = 'https://cdn.bootcdn.net/ajax/libs/vConsole/3.15.1/vconsole.min.js'
-// https://vitejs.dev/config/
 const ReactCompilerConfig = {}
 export default ({ mode }: ConfigEnv): UserConfig => {
-  console.log(mode)
   return {
     envDir: './env',
     plugins: [
@@ -75,7 +73,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         output: {
           manualChunks: {
             // 分包
-            vendor: ['react', 'react-dom'],
+            vendor: ['react', 'react-dom', 'react-router-dom'],
             antd: ['antd-mobile']
           },
           chunkFileNames: 'static/js/[name]-[hash].js',
