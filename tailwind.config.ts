@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       colors: {
         primary: COLOR_PRIMARY, // 品牌色
-        secondary: '#40A2D8', // 辅助色
+        secondary: 'hsla(201,66%,55%, 1)', // 辅助色
         success: 'hsla(100,77%,44%, 1)',
         info: 'hsla(209,100%,50%, 1)',
         error: 'hsla(359,100%,65%, 1)',

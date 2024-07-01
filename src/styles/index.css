@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 :root {
+  /* antd-mobile 变量 */
   --adm-color-primary: hsla(148.04deg, 42.97%, 51.18%, 1);
   --adm-color-text: rgba(0, 0, 0, 0.85);
   --adm-font-size-main: 14px;
-  /* 自定义主题 */
+  --adm-font-size-9: 16px;
+  /* 自定义主题变量 */
   --theme-background: #f8f8f8; /* 背景颜色 */
-  --theme-color: 0, 0%, 0%; /* 文字颜色 */
+  --theme-color: 0, 0%, 0%; /* 默认文字颜色 */
 }
 html[data-prefers-color-scheme='dark'] {
   /* --adm-color-background: #262629; */

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (768 - 375)))">
+<html lang="en" style="font-size: calc(16px + (23.04 - 16) * ((100vw - 375px) / (768 - 375)))">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.svg" />
@@ -27,11 +27,17 @@
       this.globalThis || (this.globalThis = this)
     </script>
     <style>
-      @media screen and (min-width: 520px) {
+      /* 最大适配到540px */
+      @media screen and (min-width: 540px) {
         html {
-          font-size: 18.9517px !important;
+          font-size: 18.9557px !important;
         }
       }
+      /* @media screen and (min-width: 768px) {
+        html {
+          font-size: 23.04px !important;
+        }
+      } */
     </style>
   </head>
   <body ontouchstart="">
