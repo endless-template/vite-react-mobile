@@ -98,10 +98,8 @@ export default function Design() {
           <Drawer.Content className="flex z-20 flex-col rounded-t-[8px] h-full mt-10 max-h-[56%] fixed bottom-0 left-0 right-0">
             <div className="p-4 bg-white rounded-t-lg flex-1">
               <div className="flex-shrink-0 w-12 h-1 mx-auto mb-6 rounded-full bg-gray-300" />
-              <div className="max-w-md mx-auto text-color/60">
-                <Drawer.Title className="mb-4 text-lg font-700 text-color/100">
-                  Drawer for React.
-                </Drawer.Title>
+              <div className=" mx-auto text-color/60">
+                <Drawer.Title className="mb-4 text-lg font-700 text-color/100">This is title</Drawer.Title>
                 <p className="mb-2">
                   This component can be used as a Dialog replacement on mobile and tablet devices.
                 </p>
