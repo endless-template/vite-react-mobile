@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Checkbox, Dialog, List, Popup, Radio, Switch, Toast } from 'antd-mobile'
+import { Button, Checkbox, Dialog, List, Radio, Switch, Toast } from 'antd-mobile'
 import { Drawer } from 'vaul'
 import { NavBar } from '@/components'
 import useDark from '@/hooks/useDark'
