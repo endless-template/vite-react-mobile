@@ -3,7 +3,15 @@ import { useNavigate } from 'react-router-dom'
 import type { NavBarProps } from 'antd-mobile'
 import { NavBar as AntNavBar } from 'antd-mobile'
 
-const NavBar: React.FC<NavBarProps> = props => {
+interface IProps extends NavBarProps {
+  fixed?: boolean
+  className?: string
+  style?: {
+    '--height'?: string
+  } & React.CSSProperties
+}
+const NavBar: React.FC<IProps> = props => {
+  const { fixed = true, style = {}, className = '' } = props
   const navigate = useNavigate()
   const { onBack, ...rest } = props
   function backFn() {
@@ -15,11 +23,15 @@ const NavBar: React.FC<NavBarProps> = props => {
     }
   }
   return (
-    <AntNavBar
-      onBack={backFn}
-      {...rest}
-      style={{ '--height': '3.125rem', background: 'var(--adm-color-background)' }}
-    />
+    <header style={{ '--height': style['--height'] || '3.125rem' }}>
+      <AntNavBar
+        onBack={backFn}
+        {...rest}
+        style={{ height: 'var(--height)', background: 'var(--adm-color-background)', ...style }}
+        className={`bg-white z-10 ${fixed ? 'fixed w-full' : ''} ${className}`}
+      />
+      {fixed && <div style={{ height: 'var(--height)' }}></div>}
+    </header>
   )
 }
 

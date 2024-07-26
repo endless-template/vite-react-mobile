@@ -12,6 +12,8 @@ const allRoutes: RouteObject[] = [
     children: routes
   }
 ]
+document.cookie =
+  'TokenFM=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBQ0NFU1NfVE9LRU4iLCJjbGllbnRJZCI6IjE0ODgwYTExMzliMDQzYmFhNTU1ZjRkMTI2NzNiMWQ3Iiwic2NvcGUiOiJyLXN0YWZmIiwidG9rZW4iOiIxMzgxMDI5IiwiaWF0IjoxNzIxODcwNTU5LCJleHAiOjE3MjI0NzUzNTl9.n3E9m81Oe2_pFusEXKkKhDJNpUpVQeyk02yNPcXhKSs'
 function App() {
   const router = createHashRouter(allRoutes)
   return (

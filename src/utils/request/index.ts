@@ -1,11 +1,11 @@
 import { Toast } from 'antd-mobile'
-import { ofetch } from 'ofetch'
+import { FetchError, ofetch } from 'ofetch'
 
 const request = ofetch.create({
   baseURL: '',
   timeout: 20000,
   headers: {
-    // Accept: 'application/json',
+    // Accept: 'application/json'
     // 'aaaa': '99999'
   },
   credentials: 'include',

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button, Checkbox, Dialog, List, Radio, Switch, Toast } from 'antd-mobile'
 import { Drawer } from 'vaul'
-import { NavBar } from '@/components'
+import { NavBar, SubmitBar } from '@/components'
 import useDark from '@/hooks/useDark'
 export default function Design() {
   const { theme, setTheme } = useDark()
@@ -114,6 +114,11 @@ export default function Design() {
           </Drawer.Content>
         </Drawer.Portal>
       </Drawer.Root>
+      <SubmitBar height="50px" className="px-5 py-3">
+        <Button block size="large" color="primary">
+          提交
+        </Button>
+      </SubmitBar>
     </>
   )
 }

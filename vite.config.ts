@@ -48,10 +48,9 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     server: {
       port: 9527,
       proxy: {
-        '/api': {
-          target: 'https://wwwbaidu.com',
-          changeOrigin: true,
-          rewrite: path => path.replace(/^\/api/, '')
+        '/template': {
+          target: 'https://fm-client-test.onewo.com',
+          changeOrigin: true
         }
       }
     },
