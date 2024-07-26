@@ -48,8 +48,8 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     server: {
       port: 9527,
       proxy: {
-        '/template': {
-          target: 'https://fm-client-test.onewo.com',
+        '/api': {
+          target: 'https://sss.com',
           changeOrigin: true
         }
       }
