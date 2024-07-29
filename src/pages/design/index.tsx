@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button, Checkbox, Dialog, List, Radio, Switch, Toast } from 'antd-mobile'
 import { Drawer } from 'vaul'
-import { NavBar, SubmitBar } from '@/components'
+import { NavBar, SubmitBar, SvgIcon } from '@/components'
 import useDark from '@/hooks/useDark'
 export default function Design() {
   const { theme, setTheme } = useDark()
@@ -92,6 +92,8 @@ export default function Design() {
           <Radio disabled />
         </div>
       </div>
+      <SvgIcon type="calendar" className="size-8" fill="red" />
+      <SvgIcon type="back" className="size-8" fill="var(--adm-color-text)" />
       <Drawer.Root open={open} onOpenChange={setOpen}>
         <Drawer.Overlay className="fixed top-0 bottom-0 left-0 right-0 bg-black/40 z-10" />
         <Drawer.Portal>

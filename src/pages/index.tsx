@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { Button, List } from 'antd-mobile'
-import { NavBar, SubmitBar } from '@/components'
+import { List } from 'antd-mobile'
+import { NavBar } from '@/components'
 
 function Home() {
   const go = useNavigate()

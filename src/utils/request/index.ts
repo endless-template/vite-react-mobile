@@ -9,7 +9,10 @@ const request = ofetch.create({
     // 'aaaa': '99999'
   },
   credentials: 'include',
-  onRequest: () => {},
+  onRequest: ({ options }) => {
+    // 兼容android 6.X 版本, v1.2.0版本后method不能为空且需要大写
+    options.method = options.method ? options.method.toUpperCase() : 'GET'
+  },
   onResponse: ({ response }) => {
     if (response.status === 200) {
       return response._data

@@ -1,10 +1,9 @@
-import React from 'react'
-import { Loading as Spin } from 'antd-mobile'
+import { DotLoading } from 'antd-mobile'
 
 function Loading() {
   return (
-    <div className="h-[100px] leading-[100px] text-center ">
-      <Spin />
+    <div className="pt-5 text-center ">
+      <DotLoading />
     </div>
   )
 }

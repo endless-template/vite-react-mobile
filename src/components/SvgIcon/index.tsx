@@ -1,25 +1,12 @@
 import React from 'react'
 
-import styles from './index.module.css'
-
-interface IProps {
-  className?: string
-  fill?: string // fill className
+interface IProps extends React.SVGProps<SVGSVGElement> {
   type: string
-  color?: string
-  size?: string | number
-  style?: React.CSSProperties
-  onClick?: () => void
 }
 const SvgIcon: React.FC<IProps> = props => {
-  const { className = '', fill, type, color = '#eeeeee', size = 16, onClick, style = {} } = props
+  const { type, ...rest } = props
   return (
-    <svg
-      className={`${styles.svg} ${className} ${fill}`}
-      onClick={onClick}
-      aria-hidden="true"
-      style={{ width: size, height: size, color, fill: fill ? '' : 'currentColor', ...style }}
-    >
+    <svg aria-hidden="true" {...rest}>
       <use xlinkHref={`#icon-${type}`} />
     </svg>
   )
