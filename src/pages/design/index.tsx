@@ -74,6 +74,12 @@ export default function Design() {
                 duration: 4000,
                 maskClickable: false
               })
+              setTimeout(() => {
+                Toast.show({
+                  icon: 'success',
+                  content: '上传成功'
+                })
+              }, 3000)
             }}
           >
             loading
