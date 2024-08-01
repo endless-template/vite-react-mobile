@@ -16,7 +16,7 @@ function Home() {
           <List.Item>👉Tailwindcss + rem适配</List.Item>
           <List.Item>👉Eslint + Prettier + CommitLint 规范</List.Item>
           <List.Item>👉集成svg图标组件</List.Item>
-          <List.Item>👉兼容 Android 5.0+, iOS10.3+</List.Item>
+          <List.Item>👉兼容 Android 6.0+, iOS10.3+</List.Item>
         </List>
         <div className="pt-3 ml-3 text-base text-color/60">🎉enjoy ~</div>
       </div>

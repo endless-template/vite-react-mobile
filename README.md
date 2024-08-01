@@ -10,7 +10,7 @@
 * 👉Tailwindcss + rem适配
 * 👉Eslint + Prettier + CommitLint 规范
 * 👉集成svg图标组件
-* 👉兼容 Android 5.0+, iOS10.3+
+* 👉兼容 Android 6.0+, iOS10.3+
 ## Tailwindcss + rem 适配移动端布局
  基于375宽度设计稿而配置：全局转换pxToRem，为完全兼容`Tailwindcss`单位，默认根fontSize为16px；至此基于tailwind生态插件均能正常适配，例如：vaul（一款流畅动画的Drawer插件）。
 ### 关于颜色兼容
