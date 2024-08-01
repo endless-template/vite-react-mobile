@@ -1,15 +1,32 @@
-import React from 'react'
+import type { SVGProps } from 'react'
+import React, { useEffect, useState } from 'react'
 
-interface IProps extends React.SVGProps<SVGSVGElement> {
+interface IconProps extends SVGProps<SVGSVGElement> {
   type: string
 }
-const SvgIcon: React.FC<IProps> = props => {
+
+const Icon: React.FC<IconProps> = props => {
   const { type, ...rest } = props
-  return (
-    <svg aria-hidden="true" {...rest}>
-      <use xlinkHref={`#icon-${type}`} />
-    </svg>
-  )
+  const [SvgIcon, setSvgIcon] = useState<React.FC<React.SVGProps<SVGSVGElement>> | null>(null)
+
+  useEffect(() => {
+    const importSvgIcon = async () => {
+      try {
+        const icon = await import(`../../assets/svg/${type}.svg?react`)
+        setSvgIcon(() => icon.default)
+      } catch (error) {
+        console.error(`Error loading SVG icon: ${type}`, error)
+      }
+    }
+
+    importSvgIcon()
+  }, [type])
+
+  if (!SvgIcon) {
+    return null
+  }
+
+  return <SvgIcon {...rest} />
 }
 
-export default SvgIcon
+export default Icon
