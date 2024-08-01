@@ -4,7 +4,7 @@ import { resolve } from 'node:path'
 import { ConfigEnv, UserConfig } from 'vite'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import Pages from 'vite-plugin-pages'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import svgr from 'vite-plugin-svgr'
 
 const consoleCDN = 'https://cdn.bootcdn.net/ajax/libs/vConsole/3.15.1/vconsole.min.js'
 const ReactCompilerConfig = {}
@@ -24,12 +24,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         importMode: 'async'
       }),
       legacy({}),
-      createSvgIconsPlugin({
-        iconDirs: [resolve(process.cwd(), 'src/assets/svg')],
-        symbolId: 'icon-[name]',
-        inject: 'body-first',
-        customDomId: '__svg__icons__dom__'
-      }),
+      svgr(),
       createHtmlPlugin({
         minify: true,
         inject: {

@@ -62,7 +62,7 @@
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-html": "^3.2.2",
     "vite-plugin-pages": "^0.32.3",
-    "vite-plugin-svg-icons": "^2.0.1"
+    "vite-plugin-svgr": "^4.2.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js}": [
