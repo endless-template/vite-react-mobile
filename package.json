@@ -11,7 +11,8 @@
     "eslint": "npx eslint . --fix",
     "prettier": "prettier --write '**/**.{js,jsx,tsx,ts,less}'",
     "prepare": "husky",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "commitlint": "commitlint --edit"
   },
   "dependencies": {
     "abortcontroller-polyfill": "^1.7.5",
