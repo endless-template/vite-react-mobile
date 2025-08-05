@@ -4,10 +4,6 @@ import { FetchError, ofetch } from 'ofetch'
 const request = ofetch.create({
   baseURL: '',
   timeout: 20000,
-  headers: {
-    // Accept: 'application/json'
-    // 'aaaa': '99999'
-  },
   credentials: 'include',
   onRequest: ({ options }) => {
     // 兼容android 6.X 版本, v1.2.0版本后method不能为空且需要大写
@@ -20,6 +16,9 @@ const request = ofetch.create({
       const errorText = '接口请求出错'
       Toast.show(errorText)
     }
-  }
+  },
+  onRequestError: ({ response }) => {
+    // console.log('error status', response?.status)
+  },
 })
 export default request

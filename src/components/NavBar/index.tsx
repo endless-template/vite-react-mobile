@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 import type { NavBarProps } from 'antd-mobile'
 import { NavBar as AntNavBar } from 'antd-mobile'
 
@@ -28,7 +28,7 @@ const NavBar: React.FC<IProps> = props => {
         onBack={backFn}
         {...rest}
         style={{ height: 'var(--height)', background: 'var(--adm-color-background)', ...style }}
-        className={`bg-white z-10 ${fixed ? 'fixed w-full' : ''} ${className}`}
+        className={`z-10 bg-white ${fixed ? 'fixed w-full' : ''} ${className}`}
       />
       {fixed && <div style={{ height: 'var(--height)' }}></div>}
     </header>

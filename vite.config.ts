@@ -14,16 +14,18 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     plugins: [
       react({
         babel: {
-          plugins: [['babel-plugin-react-compiler', ReactCompilerConfig]]
-        }
+          plugins: [['babel-plugin-react-compiler', ReactCompilerConfig]],
+        },
       }),
       Pages({
         extensions: ['tsx'],
         routeStyle: 'remix',
         exclude: ['**/components/**/*', '**/controller.tsx', '_app.tsx'], // _app.tsx 作为Root Layout
-        importMode: 'async'
+        importMode: 'async',
       }),
-      legacy({}),
+      legacy({
+        targets: ['Android>=6', 'iOS>=11', 'not IE 11', 'chrome 48'],
+      }),
       svgr(),
       createHtmlPlugin({
         minify: true,
@@ -35,30 +37,30 @@ export default ({ mode }: ConfigEnv): UserConfig => {
                     <script onLoad>
                       var vConsole = new VConsole();
                     </script>`
-                : ''
-          }
-        }
-      })
+                : '',
+          },
+        },
+      }),
     ],
     server: {
       port: 9527,
       proxy: {
         '/api': {
           target: 'https://sss.com',
-          changeOrigin: true
-        }
-      }
+          changeOrigin: true,
+        },
+      },
     },
     resolve: {
-      alias: [{ find: '@', replacement: resolve(__dirname, './src') }]
+      alias: [{ find: '@', replacement: resolve(__dirname, './src') }],
     },
     css: {
       modules: {
-        generateScopedName: '[local]__[hash:base64:5]'
-      }
+        generateScopedName: '[local]__[hash:base64:5]',
+      },
     },
     esbuild: {
-      drop: mode === ' production' ? ['console', 'debugger'] : []
+      drop: mode === ' production' ? ['console', 'debugger'] : [],
     },
     build: {
       chunkSizeWarningLimit: 1200,
@@ -67,14 +69,14 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         output: {
           manualChunks: {
             // 分包
-            vendor: ['react', 'react-dom', 'react-router-dom'],
-            antd: ['antd-mobile']
+            vendor: ['react', 'react-dom', 'react-router'],
+            antd: ['antd-mobile'],
           },
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',
-          assetFileNames: 'static/[ext]/[name]-[hash].[ext]'
-        }
-      }
-    }
+          assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+        },
+      },
+    },
   }
 }

@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router'
 import { ConfigProvider } from 'antd-mobile'
 import { ErrorBoundary, Loading } from '@/components'
 
@@ -9,10 +9,10 @@ export default function Root() {
       <ErrorBoundary>
         <ConfigProvider
           navBar={{
-            backIcon: backIcon()
+            backIcon: backIcon(),
           }}
           list={{
-            arrowIcon: arrowIcon()
+            arrowIcon: arrowIcon(),
           }}
         >
           <Outlet />
