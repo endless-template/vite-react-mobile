@@ -1,7 +1,7 @@
 {
   "name": "vite-react-mobile",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "vite --host",
     "build:staging": "vite build --mode staging",
